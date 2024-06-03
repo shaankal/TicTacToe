@@ -1,5 +1,3 @@
-import random
-
 # Function to print the Tic Tac Toe board
 def print_board(board):
     for row in board:
@@ -29,7 +27,8 @@ def is_board_full(board):
 def player_move(board):
     while True:
         try:
-            row, col = map(int, input("Enter your move (row and column): ").split())
+            move = input("Enter your move (row and column): ")
+            row, col = int(move[0]), int(move[1])
             if board[row][col] == " ":
                 board[row][col] = "X"
                 break
@@ -40,9 +39,11 @@ def player_move(board):
 
 # Function for the computer's move
 def computer_move(board):
-    available_moves = [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
-    move = random.choice(available_moves)
-    board[move[0]][move[1]] = "O"
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == " ":
+                board[i][j] = "O"
+                return
 
 # Main game function
 def play_game():
