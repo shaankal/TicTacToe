@@ -1,20 +1,19 @@
-# Function to print the Tic Tac Toe board
+
 def print_board(board):
     for row in board:
         print(" | ".join(row))
         print("-" * 5)
 
-# Function to check for a winner
 def check_winner(board, player):
     # Check rows
     for row in board:
         if all([cell == player for cell in row]):
             return True
-    # Check columns
+   
     for col in range(3):
         if all([board[row][col] == player for row in range(3)]):
             return True
-    # Check diagonals
+   
     if all([board[i][i] == player for i in range(3)]) or all([board[i][2-i] == player for i in range(3)]):
         return True
     return False
@@ -22,8 +21,7 @@ def check_winner(board, player):
 # Function to check if the board is full
 def is_board_full(board):
     return all([cell != " " for row in board for cell in row])
-
-# Function for the player's move
+    
 def player_move(board):
     while True:
         try:
@@ -37,7 +35,6 @@ def player_move(board):
         except (ValueError, IndexError):
             print("Invalid input. Please enter row and column as numbers between 0 and 2.")
 
-# Function for the computer's move
 def computer_move(board):
     for i in range(3):
         for j in range(3):
@@ -45,7 +42,6 @@ def computer_move(board):
                 board[i][j] = "O"
                 return
 
-# Main game function
 def play_game():
     board = [[" " for _ in range(3)] for _ in range(3)]
     print("Welcome to Tic Tac Toe!")
