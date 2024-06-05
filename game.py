@@ -3,8 +3,8 @@ def print_board(board):
     for i, row in enumerate(board):
         print(" | ".join(row))
         if i < 2:
-            print("-" * 5)
-    print("Instructions: Input the numbers with a space (e.g., '1 2' for row 1, column 2), to get the space, use Alpha -> 0")
+            print("-" * 9)
+    print("Instructions: Input the numbers as shown (e.g., '12' for row 1, column 2)")
 
 def check_winner(board, player):
     # Check rows
