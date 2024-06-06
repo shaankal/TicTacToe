@@ -11,12 +11,12 @@ def check_winner(board, player):
     for row in board:
         if all([cell == player for cell in row]):
             return True
-   
+
     # Check columns
     for col in range(3):
         if all([board[row][col] == player for row in range(3)]):
             return True
-   
+
     # Check diagonals
     if all([board[i][i] == player for i in range(3)]) or all([board[i][2-i] == player for i in range(3)]):
         return True
@@ -24,7 +24,7 @@ def check_winner(board, player):
 
 def is_board_full(board):
     return all([cell != " " for row in board for cell in row])
-    
+
 def player_move(board):
     while True:
         try:
@@ -78,8 +78,4 @@ def play_game():
             break
         elif quit_game in ['no', 'n']:
             play_game()
-        else:
-            print("Invalid input. Please enter 'yes' or 'no'.")
-
-if __name__ == "__main__":
-    play_game()
+        else
