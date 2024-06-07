@@ -2,11 +2,11 @@ import random
 
 # Function to print the Tic Tac Toe board
 def print_board(board):
-    print("  0   1   2")
+    print("    0   1   2")
     for idx, row in enumerate(board):
-        print(idx, " | ".join(row))
+        print(idx, "   " + " | ".join(row))
         if idx < 2:
-            print("  ---+---+---")
+            print("   ---+---+---")
 
 # Function to check for a winner
 def check_winner(board, player):
