@@ -4,7 +4,7 @@ import random
 def print_board(board):
     for row in board:
         print(" | ".join(row))
-        print("-" * 5)
+        print("-" * 9)
 
 # Function to check for a winner
 def check_winner(board, player):
@@ -47,7 +47,7 @@ def computer_move(board):
 # Main game function
 def play_game():
     board = [[" " for _ in range(3)] for _ in range(3)]
-    print("Welcome to Tic Tac Toe!")
+    print("Welcome to Tic-Tac-Toe! To place a move, put a number in from 0 - 2, insert a space (to get the space, click alpha -> 0), then add the next number. Ex: 1 2 represents row 1, column 2.")
     print_board(board)
     
     while True:
