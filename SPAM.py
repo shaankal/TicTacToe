@@ -64,7 +64,7 @@ def play_game():
 
         if check_winner(board, "X"):
             print_board(board)
-            print("Congratulations! You win!")
+            print("Congratulations! You win! To play again, use the arrows on the calculator to find the play_game function, then run it again!")
             break
         if is_board_full(board):
             print_board(board)
@@ -75,11 +75,11 @@ def play_game():
         
         if check_winner(board, "O"):
             print_board(board)
-            print("Computer wins! Better luck next time.")
+            print("Computer wins! Better luck next time. To play again, use the arrows on the calculator to find the play_game function, then run it again!")
             break
         if is_board_full(board):
             print_board(board)
-            print("It's a tie!")
+            print("It's a tie! To play again, use the arrows on the calculator to find the play_game function, then run it again!")
             break
 
 if __name__ == "__main__":
