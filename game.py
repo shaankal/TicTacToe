@@ -1,10 +1,12 @@
 def print_board(board):
+    for row in board:
     print("Board Layout:")
     for i, row in enumerate(board):
         print(" | ".join(row))
+        print("-" * 5)
         if i < 2:
-            print("-" * 9)
-    print("Instructions: Input the numbers as shown (e.g., '12' for row 1, column 2)")
+            print("-" * 5)
+    print("Instructions: Input the numbers with a space (e.g., '1 2' for row 1, column 2), to get the space, use Alpha -> 0")
 
 def check_winner(board, player):
     # Check rows
@@ -22,52 +24,11 @@ def check_winner(board, player):
         return True
     return False
 
+# Function to check if the board is full
 def is_board_full(board):
     return all([cell != " " for row in board for cell in row])
 
-def player_move(board):
-    while True:
-        try:
-            move = input("Enter your move (row and column): ")
-            row, col = int(move[0]), int(move[1])
-            if board[row][col] == " ":
-                board[row][col] = "X"
-                break
-            else:
-                print("This cell is already taken!")
-        except (ValueError, IndexError):
-            print("Invalid input. Please enter row and column as numbers between 0 and 2.")
-
-def computer_move(board):
-    for i in range(3):
-        for j in range(3):
-            if board[i][j] == " ":
-                board[i][j] = "O"
-                return
-
-def play_game():
-    board = [[" " for _ in range(3)] for _ in range(3)]
-    print("Welcome to Tic Tac Toe!")
-    print_board(board)
-    
-    while True:
-        # Player's move
-        player_move(board)
-        print_board(board)
-        if check_winner(board, "X"):
-            print("Congratulations! You win!")
-            break
-        if is_board_full(board):
-            print("It's a tie!")
-            break
-        
-        # Computer's move
-        computer_move(board)
-        print_board(board)
-        if check_winner(board, "O"):
-            print("Computer wins! Better luck next time.")
-            break
-        if is_board_full(board):
+@@ -68,5 +71,15 @@ def play_game():
             print("It's a tie!")
             break
 
