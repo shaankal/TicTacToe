@@ -4,7 +4,7 @@ import random
 def print_board(board):
     print("    0   1   2")
     for idx, row in enumerate(board):
-        print(f"{idx}   " + " | ".join(row))
+        print("{0}   {1}".format(idx, " | ".join(row)))
         if idx < 2:
             print("   ---+---+---")
 
