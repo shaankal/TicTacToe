@@ -78,4 +78,8 @@ def play_game():
             break
         elif quit_game in ['no', 'n']:
             play_game()
-        else
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+if __name__ == "__main__":
+    play_game()
